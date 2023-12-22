@@ -19,7 +19,7 @@ const Navbar = () => {
   const handleSignOut = () => {
     logOut().then().catch();
   };
-  console.log(handleSignOut);
+  // console.log(handleSignOut);
 
   const links = (
     <>
@@ -128,7 +128,7 @@ const Navbar = () => {
               {user ? (
                 <>
                   <li>
-                    <NavLink className="justify-between">
+                    <NavLink to="/dashboard" className="justify-between">
                       DashBoard
                       <span className="badge">New</span>
                     </NavLink>
