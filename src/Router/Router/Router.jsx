@@ -8,36 +8,56 @@ import Register from "../../Page/Register/Register";
 import ErrorPages from "../../Shared/ErrorPage/ErrorPages";
 import Dashboard from "../../Page/Dashboard/Dashboard";
 import AddPost from "../../Page/Dashboard/Addpost/AddPost";
+import MyPost from "../../Page/Dashboard/MyPost/MyPost";
+import Update from "../../components/components/Update/Update";
+import TaskPost from "../../components/TaskPost/TaskPost";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement:<ErrorPages/>,
+    errorElement: <ErrorPages />,
     children: [
       {
         path: "/",
         element: <Home />,
       },
+
+      {
+        path:"taskPost",
+        element:<TaskPost/>
+      }
+      
     ],
   },
   {
-    path:"/login",
-    element:<Login/>
+    path: "/login",
+    element: <Login />,
   },
   {
-    path:"/register",
-    element:<Register/>
+    path: "/register",
+    element: <Register />,
   },
   {
-    path:"/dashboard",
-    element:<Dashboard/>,
-    children:[
+    path: "/dashboard",
+    element: <Dashboard />,
+    children: [
       {
-        path:"addPost",
-        element:<AddPost/>
-      }
-    ]
-  }
+        path: "addPost",
+        element: <AddPost />,
+      },
+      {
+        path: "post",
+        element: <MyPost />,
+      },
+
+      {
+        path: "update/:id",
+        element: <Update />,
+        loader:({params}) => fetch(`http://localhost:5000/tasks/${params.id}`)
+      },
+     
+    ],
+  },
 ]);
 export default router;

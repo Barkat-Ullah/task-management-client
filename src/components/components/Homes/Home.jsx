@@ -4,9 +4,8 @@ import Banner from "../Banners/Banner";
 const Home = () => {
   return (
     <div>
-      
       <Banner />
-      <Develop/>
+      <Develop />
     </div>
   );
 };

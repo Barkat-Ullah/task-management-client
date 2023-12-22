@@ -59,8 +59,13 @@ const AddPost = () => {
 
     console.log(taskData);
   };
+
+  
+
   return (
     <div className="my-5 ml-5">
+
+        <h2 className="text-center text-4xl font-bold">Add Your Task</h2>
       {/* <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full my-4">
           <label className="label">

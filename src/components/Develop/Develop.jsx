@@ -3,8 +3,8 @@
 const Develop = () => {
   return (
     <div>
-      <section className="bg-white dark:bg-gray-900">
-        <div className="container px-6 py-10 mx-auto">
+      <section className="bg-base-200">
+        <div className="container px-6 py-5 mx-auto">
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
             <div className="p-8 space-y-3 border-2 border-teal-400 dark:border-teal-300 rounded-xl">
               <span className="inline-block text-teal-500 dark:text-teal-400">
