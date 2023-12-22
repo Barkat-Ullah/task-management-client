@@ -8,6 +8,7 @@ const MyPost = () => {
   const { user } = useAuth();
   const axiosPublic = useTask();
   const [tasks, refetch] = useGetTask();
+  console.log(tasks);
   const userTasks = tasks?.filter((task) => task?.userEmail === user?.email);
   console.log(userTasks.length);
 
@@ -38,30 +39,30 @@ const MyPost = () => {
     });
   };
 
-//   const onDragEnd = (result) => {
-//     const { destination, source } = result;
+  //   const onDragEnd = (result) => {
+  //     const { destination, source } = result;
 
-//     if (
-//       !destination ||
-//       (destination.droppableId === source.droppableId &&
-//         destination.index === source.index)
-//     ) {
-//       return;
-//     }
+  //     if (
+  //       !destination ||
+  //       (destination.droppableId === source.droppableId &&
+  //         destination.index === source.index)
+  //     ) {
+  //       return;
+  //     }
 
-//     const movedTask = userTasks[source.index];
+  //     const movedTask = userTasks[source.index];
 
-//     axiosPublic
-//       .patch(`/tasks/${movedTask.id}`, { status: destination.droppableId })
-//       .then((res) => {
-//         if (res.status === 200) {
-//           refetch();
-//         }
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   };
+  //     axiosPublic
+  //       .patch(`/tasks/${movedTask.id}`, { status: destination.droppableId })
+  //       .then((res) => {
+  //         if (res.status === 200) {
+  //           refetch();
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //   };
 
   return (
     <div>

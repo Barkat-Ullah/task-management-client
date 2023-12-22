@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 
 const AddPost = () => {
   const { user } = useAuth();
-  console.log("User:", user);
+  // console.log("User:", user);
   const axiosPublic = useTask();
 
   //   const { register, handleSubmit } = useForm();
@@ -46,7 +46,7 @@ const AddPost = () => {
       date: formData.get("date"),
       description: formData.get("description"),
     };
-    const res = await axiosPublic.post("tasks", taskData);
+    const res = await axiosPublic.post("/tasks", taskData);
     if (res.data?.insertedId) {
       Swal.fire({
         position: "top-end",
