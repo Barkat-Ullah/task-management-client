@@ -38,13 +38,30 @@ const MyPost = () => {
     });
   };
 
-  // Swal.fire({
-  //     position: "top-end",
-  //     icon: "success",
-  //     title: `${user.name} has been Admin`,
-  //     showConfirmButton: false,
-  //     timer: 1500
-  //   });
+//   const onDragEnd = (result) => {
+//     const { destination, source } = result;
+
+//     if (
+//       !destination ||
+//       (destination.droppableId === source.droppableId &&
+//         destination.index === source.index)
+//     ) {
+//       return;
+//     }
+
+//     const movedTask = userTasks[source.index];
+
+//     axiosPublic
+//       .patch(`/tasks/${movedTask.id}`, { status: destination.droppableId })
+//       .then((res) => {
+//         if (res.status === 200) {
+//           refetch();
+//         }
+//       })
+//       .catch((error) => {
+//         console.log(error);
+//       });
+//   };
 
   return (
     <div>

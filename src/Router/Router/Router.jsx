@@ -11,6 +11,7 @@ import AddPost from "../../Page/Dashboard/Addpost/AddPost";
 import MyPost from "../../Page/Dashboard/MyPost/MyPost";
 import Update from "../../components/components/Update/Update";
 import TaskPost from "../../components/TaskPost/TaskPost";
+import PrivateRoute from "../PrivateRouter/PrivateRouter";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: <PrivateRoute><Dashboard /></PrivateRoute>,
     children: [
       {
         path: "addPost",
@@ -54,7 +55,7 @@ const router = createBrowserRouter([
       {
         path: "update/:id",
         element: <Update />,
-        loader:({params}) => fetch(`http://localhost:5000/tasks/${params.id}`)
+        loader:({params}) => fetch(`https://task-management-server-2pz52kaob-barkat-ullah.vercel.app/tasks/${params.id}`)
       },
      
     ],
